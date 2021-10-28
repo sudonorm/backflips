@@ -1,10 +1,10 @@
 pipeline{
     agent any
     
-   // triggers {
+    triggers {
         //cron('H */3 * * *') // Run script everyday at 8:53am 
-        //upstream(upstreamProjects: 'mainpipeline', threshold: hudson.model.Result.SUCCESS)
-    //}
+        upstream(upstreamProjects: 'mainpipeline', threshold: hudson.model.Result.SUCCESS)
+    }
     stages {
         stage('Checkout Code') {
             steps {
